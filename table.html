@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Parse Nested JSON Data in JavaScript</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.6.4.js"></script>
+</head>
+<body>
+    <style>
+        .imgicon{
+            height :50px;
+            width: auto;
+        }
+    </style>
+    <script>
+    /* Storing multi-line JSON string in a JS variable
+    using the new ES6 template literals */
+      $.getJSON('https://test.startost.com/airtableapi/fetchalldata.php', function(data){
+ var json = JSON.stringify(data);
+ 
+
+    
+    
+    // Converting JSON object to JS object
+    var obj = JSON.parse(json);
+    
+
+
+                   
+    // Printing a single value
+      for (let i = 0; i < Object.keys(json).length; i++) {
+    const tabelBody = document.querySelector("#tableBody");
+            tableBody.innerHTML =   tableBody.innerHTML + `<tr>
+                                <td>${obj["records"][i]["fields"]["Name"]}</td>
+                                <td>${obj["records"][i]["fields"]["Phone"]}</td>
+                                <td>${obj["records"][i]["fields"]["Address"]}</td>
+                                <td><img src="${obj["records"][i]["fields"]["Image"][0]["url"]}" alt="alternatetext" class = 'imgicon'></td>
+                            </tr>`
+
+            
+                             
+        
+   /** document.write(obj["records"][i]["fields"]["Name"] + "<br>");  
+    document.write(obj["records"][i]["fields"]["Phone"] + "<br>");  
+    document.write(obj["records"][i]["fields"]["Address"] + "<br>"); 
+    document.write(obj["records"][i]["fields"]["Image"][0]["url"] + "<br>"); 
+    **/
+}
+ });
+ 
+    </script>
+    
+        <table border="2">
+            <thead class="thead-dark">
+                <tr>
+                 <th scope="col">Name</th>
+                 <th scope="col">Phone</th>
+                 <th scope="col">Address</th>
+                 <th scope="col">Image</th>
+               </tr>
+            </thead>
+          <tbody id="tableBody">
+                                    
+        </tbody>
+    </table>
+</body>
+</html>
