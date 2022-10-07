@@ -1,0 +1,41 @@
+<?php return array(
+    'root' => array(
+        'pretty_version' => '1.0.0+no-version-set',
+        'version' => '1.0.0.0',
+        'type' => 'library',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'reference' => NULL,
+        'name' => '__root__',
+        'dev' => true,
+    ),
+    'versions' => array(
+        '__root__' => array(
+            'pretty_version' => '1.0.0+no-version-set',
+            'version' => '1.0.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'reference' => NULL,
+            'dev_requirement' => false,
+        ),
+        'davedevelopment/stiphle' => array(
+            'pretty_version' => '0.9.2',
+            'version' => '0.9.2.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../davedevelopment/stiphle',
+            'aliases' => array(),
+            'reference' => '76151e6474741adee258c1a4860a0460e319563b',
+            'dev_requirement' => false,
+        ),
+        'sleiman/airtable-php' => array(
+            'pretty_version' => '2.4.6',
+            'version' => '2.4.6.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../sleiman/airtable-php',
+            'aliases' => array(),
+            'reference' => '655188ea9c0641a7658dd88f82428c835ce6baec',
+            'dev_requirement' => false,
+        ),
+    ),
+);
